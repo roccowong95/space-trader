@@ -3,15 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import { LoginWrapper } from './components/LoginWrapper';
 import { ContextContainer } from './ContextContainer';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 function App() {
   return (
     <div className="App">
 
       <ContextContainer>
-        <LoginWrapper>
-          You are logged in!
-        </LoginWrapper>
+        <ErrorBoundary>
+          <LoginWrapper>
+            You are logged in!
+          </LoginWrapper>
+        </ErrorBoundary>
       </ContextContainer>
 
       <header className="App-header">
